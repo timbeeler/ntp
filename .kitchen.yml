@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos_6.5_20140820
+    driver:
+      box: centos_6.5_20140820
+      provider: vmware_fusion
+suites:
+  - name: default
+    run_list:
+      - recipe[ntp::default]
+    attributes:
