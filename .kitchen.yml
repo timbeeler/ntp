@@ -6,10 +6,12 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: centos_6.5_20140820
+  - name: chef/centos-6.5
     driver:
-      box: centos_6.5_20140820
+      box: chef/centos-6.5
+      box url: chef/centos-6.5
       provider: vmware_fusion
+
 suites:
   - name: default
     run_list:
