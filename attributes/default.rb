@@ -1,3 +1,3 @@
 #File Paths
-default[:ntp][:timezone][:pacific]       = "usr/share/zoneinfo/PST8PDT"
-default[:host][:timezone][:localtime]    = "etc/localtime"
+default[:timezone][:pacific]       = "usr/share/zoneinfo/PST8PDT"
+default[:timezone][:localtime]           = "etc/localtime"

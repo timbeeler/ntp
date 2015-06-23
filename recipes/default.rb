@@ -5,8 +5,8 @@
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
 #Variables
-ntp_timezone_pacific      = node[:ntp][:timezone][:pacific]
-host_localtime            = node[:host][:localtime]
+timezone_pacific      = node[:timezone][:pacific]
+timezone_localtime    = node[:timezone][:localtime]
 
 
 package 'ntp' do
@@ -18,11 +18,11 @@ cookbook_file 'etc/ntp.conf' do
   mode '644'
 end
 
-file host_localtime do
+file timezone_localtime do
   owner 'root'
   group 'root'
   mode 0644
-  content ::File.open(ntp_timezone_pacific).read
+  content ::File.open(timezone_pacific).read
   action :create
 end
 
